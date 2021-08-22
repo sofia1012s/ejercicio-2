@@ -5,18 +5,15 @@
  */
 public class Persona {
     private String nombre;
-    private String apellido;
     private int edad;
 
 /**
  * 
  * @param nombre 
- * @param apellido
  * @param edad
  */
-    public Persona(String nombre, String apellido, int edad){
+    public Persona(String nombre, int edad){
         this.nombre = nombre;
-        this.apellido = apellido;
         this.edad = edad;
     }
 
@@ -38,13 +35,5 @@ public class Persona {
         return edad;
     }
 
-    
-    /** 
-     * @return String
-     */
-    public String getFamilia()
-    {
-        return apellido;
-    }
 }
 

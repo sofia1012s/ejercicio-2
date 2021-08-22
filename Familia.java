@@ -14,11 +14,10 @@ public class Familia {
     private int adultos;
     private int perrosRefugiados;
     private boolean disponibilidad;
-    private int cantidad = 0;
-    private int cantidadp = 0;
+    private int cantidad = 1;
+    private int cantidadp = 1;
     private Persona[] miembros = new Persona[cantidad];
     private Perro[] perros = new Perro[cantidadp];
-    private Perro perrito;
 
 /**
  * 
@@ -29,17 +28,18 @@ public class Familia {
  * @param pr
  * @param d
  */
-    public Familia(String apellidoFam, int np, int ng, int a, int pr, boolean d) {
+    public Familia(String apellidoFam, int np, int ng, int a, int pr, boolean d,int cp) {
         apellidoFamilia = apellidoFam;
         ninosPequenos = np;
         ninosGrades = ng;
         adultos = a;
         perrosRefugiados = pr;
         disponibilidad = d;
+        cantidadp = cp;
     }
 
-    public void nuevoPerro() {
-        for(int i = 0; i <= perros.length; i++) {
+    public void nuevoPerro(Perro perrito) {
+        for(int i = 0; i < perros.length; i++) {
             if (perros[i]==null){
             perros[i] = perrito;}
         }

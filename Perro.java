@@ -5,11 +5,11 @@ public class Perro
     private String color;
     private String salud;
     private String edad;
-    private String tamano;
+    private int tamano;
     private int raza;
     private boolean refugiado;
 
-    public Perro(String nombrep, String colorp, String saludp, String edadp, String tamanop, int razap, boolean refugiadop)
+    public Perro(String nombrep, String colorp, String saludp, String edadp, int tamanop, int razap, boolean refugiadop)
     {
         nombre = nombrep;
         color = colorp;
@@ -45,7 +45,7 @@ public class Perro
         return edad;
     }
 
-    public String getTamano()
+    public int getTamano()
     {
         return tamano;
     }

@@ -24,7 +24,7 @@ public class Vista {
     }
 
     public void opcionInvalida(){
-		System.out.println("Ha elegido una opción inválida.");
+		System.out.println("Ha elegido una opcion invalida.");
 	}
 
     public void nuevoPerro()
@@ -67,11 +67,11 @@ public class Vista {
         return edadp;
     }
 
-    public String tamanoPerro()
+    public int tamanoPerro()
     {
-        String tamanop = "";
-        System.out.println("\nTamano (pequeno, grande, mediano): ");
-        tamanop = scan.next();
+        int tamanop = 0;
+        System.out.println("\nTamano (pequeno = 1, mediano =2 , grande = 3): ");
+        tamanop = scan.nextInt();
 
         return tamanop;
     }
@@ -140,14 +140,6 @@ public class Vista {
 
     }
 
-    public String apellidoPersona(){
-        String apellidoPersona = "";
-        System.out.println("\nIngrese el apellido de la familia de la persona: (para poder agruparla con el resto de la familia)");
-        apellidoPersona = scan.next();
-        return apellidoPersona;
-
-    }
-
     public int edadPersona(){
         int edadPersona = 0;
         System.out.println("\nIngrese la edad de la persona: ");
@@ -160,4 +152,34 @@ public class Vista {
         System.out.println("\nSe ha alcanzado el limite de familia! no pueden agregarse mas");
 
     }
+
+    public int cantidadPerros(){
+        int cantidad = 0;
+        System.out.println("\nCuantos perros le gustaría refugiar?: ");
+        cantidad = scan.nextInt();
+        return cantidad;
+
+    }
+
+    public void refugiarPerro(String nombrep){
+        System.out.println("\nVamos a encontrar un hogar para " + nombrep);
+
+    }
+
+    public void perritoRefugiado(String nombrep, String af){
+        System.out.println("\nEl perrito " + nombrep +" se ha ido con la familia " + af);
+
+    }
+
+    public void huerfano(String nombrep){
+        System.out.println("\nNo encontramos un hogar para " + nombrep + " se quedará con nosotros hasta encontrarle un nuevo hogar.") ;
+
+    }
+
+    public void todos(){
+        System.out.println("\nTodos los perritos han sido adoptados!") ;
+
+    }
+
+
 }
