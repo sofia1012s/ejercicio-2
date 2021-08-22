@@ -1,3 +1,4 @@
+
 /******************************************************************************
  * Familia.java
  * 
@@ -7,55 +8,143 @@
  *          Clase
  ******************************************************************************/
 public class Familia {
-    private Persona persona;
-    private Perro perro;
     private String apellidoFamilia;
-    private int ninosPequenos = 0;
-    private int ninosGrades = 0;
-    private int adultos = 0;
-    private int perrosRefugiados = 0;
-    private boolean disponibilidad = true;
-    private Persona[] miembros;
-    private Perro[] perros;
+    private int ninosPequenos;
+    private int ninosGrades;
+    private int adultos;
+    private int perrosRefugiados;
+    private boolean disponibilidad;
+    private int cantidad = 0;
+    private int cantidadp = 0;
+    private Persona[] miembros = new Persona[cantidad];
+    private Perro[] perros = new Perro[cantidadp];
+    private Perro perrito;
 
-    public Familia(String apellido, Persona[] mie) {
-        apellidoFamilia = apellido;
-        miembros = mie;
+/**
+ * 
+ * @param apellidoFam
+ * @param np
+ * @param ng
+ * @param a
+ * @param pr
+ * @param d
+ */
+    public Familia(String apellidoFam, int np, int ng, int a, int pr, boolean d) {
+        apellidoFamilia = apellidoFam;
+        ninosPequenos = np;
+        ninosGrades = ng;
+        adultos = a;
+        perrosRefugiados = pr;
+        disponibilidad = d;
     }
 
-    public void setNuevoMiembro(String nombre, String apellido, int edad) {
-        persona = new Persona(nombre, apellido, edad);
+    public void nuevoPerro() {
+        for(int i = 0; i <= perros.length; i++) {
+            if (perros[i]==null){
+            perros[i] = perrito;}
+        }
+
+        if (perros.length == 4) {
+            disponibilidad = false;
+        }
     }
 
-    public void setPerro(String nombrep, String colorp, String saludp, String edadp, String tamanop, String razap, boolean refugiado) {
-        perro = new Perro(nombrep, colorp, saludp, edadp,tamanop,razap,refugiado);
+    
+    /** 
+     * @param miembrofam
+     */
+    public void nuevoMiembro(Persona miembrofam) {
+        for(int i = 0; i < miembros.length; i++){
+            if (miembros[i]==null){
+            miembros[i] = miembrofam;
+            cantidad++;}
+        }
     }
 
     public void setDisponibilidad() {
         disponibilidad = false;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getApellido() {
         return apellidoFamilia;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getPerros() {
+        perrosRefugiados = perros.length;
         return perrosRefugiados;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean getDisponibilidad() {
         return disponibilidad;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getPequenos(){
+        for(int i = 0; i < miembros.length; i++)
+        {
+            if (miembros[i].getEdad() <= 10)
+            {
+                ninosPequenos++;
+            }
+        }
         return ninosPequenos;
     }
 
-    public int getGrande(){
+    
+    /** 
+     * @return int
+     */
+    public int getGrande() {
+        for(int i = 0; i < miembros.length; i++)
+        {
+            if (miembros[i].getEdad() > 10 && miembros[i].getEdad() < 18)
+            {
+                ninosGrades++;
+            }
+        }
         return ninosGrades;
     }
 
-    public int getAdultos(){
+    
+    /** 
+     * @return int
+     */
+    public int getAdultos() {
+        for(int i = 0; i < miembros.length; i++)
+        {
+            if (miembros[i].getEdad() > 18)
+            {
+                adultos++;
+            }
+        }
         return adultos;
+    }
+
+    
+    /** 
+     * @return String
+     */
+    public String getMiembros() {
+        String str = "";
+        for(int i = 0; i < miembros.length; i++) {
+            str += miembros[i] + "\n";
+            i++;
+        }
+        return str;
     }
 }

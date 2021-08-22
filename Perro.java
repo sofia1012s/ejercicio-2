@@ -1,3 +1,4 @@
+
 public class Perro
 {
     private String nombre;
@@ -5,19 +6,21 @@ public class Perro
     private String salud;
     private String edad;
     private String tamano;
-    private String raza;
-    private boolean refugiado = false;
+    private int raza;
+    private boolean refugiado;
 
-    public Perro(String nombre, String color, String salud, String edad, String tamano, String raza, boolean refugiado)
+    public Perro(String nombrep, String colorp, String saludp, String edadp, String tamanop, int razap, boolean refugiadop)
     {
-        this.nombre = nombre;
-        this.color = color;
-        this.salud = salud;
-        this.edad = edad;
-        this.tamano = tamano;
-        this.raza = raza;
-        this.refugiado = refugiado;
+        nombre = nombrep;
+        color = colorp;
+        salud = saludp;
+        edad = edadp;
+        tamano = tamanop;
+        raza = razap;
+        refugiado = refugiadop;
+
     }
+
 
     public void setEstado(){
         refugiado = true;
@@ -47,7 +50,7 @@ public class Perro
         return tamano;
     }
 
-    public String getRaza()
+    public int getRaza()
     {
         return raza;
     }
