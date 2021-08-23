@@ -1,6 +1,16 @@
-
+/******************************************************************************
+ * Controlador.java
+ * 
+ * @author Sofía Salguero
+ * @version 22/08/2021 
+ * Clase controlador, se encarga de ser el main y realizar
+ * las acciones necesarias para tener una interacción entre los modelos y la vista
+ ******************************************************************************/
 public class Controlador {
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         Vista view = new Vista();
         Perro dog;
@@ -129,7 +139,7 @@ public class Controlador {
 
                             for (int j = 0; j < perrosRefugio.length;) {
                                 if (perrosRefugio[j] != null) {
-                                    
+
                                     if (perrosRefugio[j].getEstado() == false) {
                                         String nombre = perrosRefugio[j].getNombre();
                                         view.refugiarPerro(nombre);
@@ -169,7 +179,8 @@ public class Controlador {
                                             }
 
                                             // si la familia tiene niños solamente adultos
-                                            if (familias[j].getGrande() == 0 && familias[j].getPequenos() == 0 && familias[j].getAdultos() > 0) {
+                                            if (familias[j].getGrande() == 0 && familias[j].getPequenos() == 0
+                                                    && familias[j].getAdultos() > 0) {
 
                                                 Perro perrito = perrosRefugio[j];
                                                 familias[i].nuevoPerro(perrito);
@@ -197,20 +208,20 @@ public class Controlador {
                                                 break;
                                             }
                                         }
-                                        
-                                        else{
+
+                                        else {
                                             view.huerfano(nombre);
                                         }
-                                       
+
                                         break;
                                     }
-                    
-                                    else{
+
+                                    else {
                                         view.todos();
                                         break;
                                     }
-                                } 
-                                
+                                }
+
                                 else {
                                     view.todos();
                                     break;

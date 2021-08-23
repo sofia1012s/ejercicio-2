@@ -1,6 +1,13 @@
 
-public class Perro
-{
+/******************************************************************************
+ * Perro.java
+ * 
+ * @author Sofía Salguero
+ * @version 22/08/2021 
+ * Clase Perro que se encarga de almacenar los datos de cada
+ * nuevo perro ingresado a la perrera
+ ******************************************************************************/
+public class Perro {
     private String nombre;
     private String color;
     private String salud;
@@ -9,8 +16,21 @@ public class Perro
     private int raza;
     private boolean refugiado;
 
-    public Perro(String nombrep, String colorp, String saludp, String edadp, int tamanop, int razap, boolean refugiadop)
-    {
+    /**
+     * 
+     * @param nombrep
+     * @param colorp
+     * @param saludp
+     * @param edadp
+     * @param tamanop
+     * @param razap
+     * @param refugiadop
+     * 
+     * Método constructor que almacena los datos de cada nueva
+     * instancia de perro
+     */
+    public Perro(String nombrep, String colorp, String saludp, String edadp, int tamanop, int razap,
+            boolean refugiadop) {
         nombre = nombrep;
         color = colorp;
         salud = saludp;
@@ -21,42 +41,61 @@ public class Perro
 
     }
 
-
-    public void setEstado(){
+    /**
+     * Método para indicar que el perro ya ha sido refugiado
+     */
+    public void setEstado() {
         refugiado = true;
     }
 
-    public String getNombre(){
+    /**
+     * @return String Método para obtener nombre del perro
+     */
+    public String getNombre() {
         return nombre;
     }
 
-    public String getColor()
-    {
+    /**
+     * @return String Método para obtener color del perro
+     * 
+     */
+    public String getColor() {
         return color;
     }
 
-    public String getSalud()
-    {
+    /**
+     * @return String Método para obtener salud del perro
+     */
+    public String getSalud() {
         return salud;
     }
 
-    public String getEdad()
-    {
+    /**
+     * @return String Método para obtener edad del perro
+     */
+    public String getEdad() {
         return edad;
     }
 
-    public int getTamano()
-    {
+    /**
+     * @return int Método para obtener tamaño del perro
+     */
+    public int getTamano() {
         return tamano;
     }
 
-    public int getRaza()
-    {
+    /**
+     * @return int Método para obtener raza del perro
+     */
+    public int getRaza() {
         return raza;
     }
 
-    public boolean getEstado()
-    {
+    /**
+     * @return boolean Método para obtener estado del perro (si ha sido refugiado o
+     *         no)
+     */
+    public boolean getEstado() {
         return refugiado;
     }
 }
